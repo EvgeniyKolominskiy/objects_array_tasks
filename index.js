@@ -92,3 +92,23 @@ function addElem(array, element, place) {
 
 addElem(arr1, 12, 7);
 console.log(`Array with added element 12 at index 7: ${arr1}`);
+
+// 6. Функция удаления элемента из массива по указанному индексу.
+
+/**
+ *
+ * @param {Array} array
+ * @param {Number} place Index of the element to be removed from array.
+ */
+function removeElem(array, place) {
+	for (let i = 0; i < array.length - 1; i++) {
+		if (i >= place) {
+			array[i] = array[i + 1];
+		}
+	}
+	delete array[array.length - 1];
+	array.length -= 1;
+}
+
+removeElem(arr1, 7);
+console.log(`Array with removed element at index 7: ${arr1}`);
