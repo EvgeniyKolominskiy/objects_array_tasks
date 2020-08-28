@@ -37,3 +37,19 @@ function fooEven(array) {
 }
 
 fooEven(arr1);
+
+// 3. Функция принимает массив и возвращает сумму всех элементов массива.
+/**
+ *
+ * @param {Array} array
+ * @returns {number}
+ */
+function sumArr(array) {
+	let sum = null;
+	for (let i = 0; i <= array.length - 1; i++) {
+		sum += array[i];
+	}
+	return sum;
+}
+
+console.log(`Array sum: ${sumArr(arr1)}`);
