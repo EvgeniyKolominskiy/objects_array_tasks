@@ -22,3 +22,18 @@ function displayArray(array) {
 }
 
 displayArray(arr1);
+
+// 2. Функция принимает массив и выводит только четные элементы.
+/**
+ *
+ * @param {Array} array
+ */
+function fooEven(array) {
+	for (let i = 0; i <= array.length - 1; i++) {
+		if (array[i] % 2 === 0) {
+			console.log(array[i]);
+		}
+	}
+}
+
+fooEven(arr1);
