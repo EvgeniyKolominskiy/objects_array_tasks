@@ -71,3 +71,24 @@ function maxElem(array) {
 }
 
 console.log(`Array max element: ${maxElem(arr1)}`);
+
+// 5. Функция добавления нового элемента в массив по указанному индексу.
+/**
+ *
+ * @param {Array} array Array where the specified Element will be inserted
+ * @param element Element which will be inserted into Array
+ * @param place Index at which the Element will be inserted into Array
+ */
+function addElem(array, element, place) {
+	for (let i = array.length; i >= 0; i--) {
+		if (i > place) {
+			array[i] = array[i - 1];
+		}
+		if (i === place) {
+			array[i] = element;
+		}
+	}
+}
+
+addElem(arr1, 12, 7);
+console.log(`Array with added element 12 at index 7: ${arr1}`);
