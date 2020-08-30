@@ -112,3 +112,51 @@ function removeElem(array, place) {
 
 removeElem(arr1, 7);
 console.log(`Array with removed element at index 7: ${arr1}`);
+
+/*Задание 2
+Создать еще один массив из 5 случайных чисел и написать следующие функции.
+1. Функция принимает 2 массива и возвращает новый массив, в котором собраны все элементы из двух массивов без повторений.*/
+
+		const arr2 = [];
+
+		for (let i = 0; i < 5; i++) {
+				arr2.push(Math.round(Math.random() * 100));
+		}
+		
+		console.log(`Second array : ${arr2}`);
+		
+		/**
+		 *
+		 * @param array1
+		 * @param array2
+		 * @returns {[]} Array which comprises all the elements from the array1 and the array2 without repetitions.
+		 */
+		function concatArrays(array1, array2) {
+				const array = [];
+				saveUniqueElementsToArray(array1, array, array);
+				saveUniqueElementsToArray(array2, array, array);
+				return array;
+		}
+		
+		/**
+		 * Checks for each element in array 1 whether there is a duplicate element in array2. If there is no duplicate in array2, the element from array1 is saved in array3.
+		 * @param {Array} array1
+		 * @param {Array} array2
+		 * @param {Array} array3 Stores the elements from array1 that have no duplicates in array2.
+		 */
+		function saveUniqueElementsToArray(array1, array2, array3) {
+				for (let i = 0; i < array1.length; i++) {
+						let flag = true;
+						for (let j = 0; j < array2.length; j++) {
+								if ( array1[i] === array2[j] ) {
+										flag = false;
+										break;
+								}
+						}
+						if (flag) {
+								array3.push(array1[i]);
+						}
+				}
+		}
+		
+		console.log(`Concatenated arr1 and arr2: ${concatArrays(arr1, arr2)}`);
