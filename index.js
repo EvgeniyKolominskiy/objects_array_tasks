@@ -196,3 +196,19 @@ const arr5 = [2, 55, 54, 7, 3, 22, 3, 2, 44, 56];
 
 console.log(`Mutual elements of arrays [2, 3, 3, 56, 77, 8, 55] and [2, 55, 54, 7, 3, 22, 3, 2, 44, 56] : ${findMutualElements(arr4, arr5)}`);
 console.log(`Mutual elements of arr1 and arr2: ${findMutualElements(arr1, arr2)}`);
+
+/*3. Функция принимает 2 массива и возвращает новый массив, в котором собраны все элементы из первого массива, которых нет во втором массиве.*/
+
+/**
+ *
+ * @param {Array} array1
+ * @param {Array} array2
+ * @returns {[]} Array that consists of the elements that are comprised in the first array but not included in the second array.
+ */
+function findUniqueElem(array1, array2) {
+	const array = [];
+	saveUniqueElemToArray(array1, array2, array);
+	return array;
+}
+
+console.log(`All elements comprised in the first array only: ${findUniqueElements(arr1,arr2)}`);
