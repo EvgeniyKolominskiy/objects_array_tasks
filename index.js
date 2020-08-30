@@ -160,3 +160,39 @@ console.log(`Array with removed element at index 7: ${arr1}`);
 		}
 		
 		console.log(`Concatenated arr1 and arr2: ${concatArrays(arr1, arr2)}`);
+
+/*  2. Функция принимает 2 массива и возвращает новый массив, в котором собраны общие элементы (то есть элементы, которые встречаются и в первом и во втором массивах) без повторений.*/
+
+/**
+ *
+ * @param {Array} array1
+ * @param {Array} array2
+ * @returns {[]} Array that comprises mutual elements od array1 and array2 without repetitions.
+ */
+
+function findMutualElem(array1, array2) {
+	const array = [];
+	for (let i = 0; i < array1.length; i++) {
+			for (let j = 0; j < array2.length; j++) {
+					if (array1[i] === array2[j]) {
+							let flag = true;
+							for (let k = 0; k < array.length; k++) {
+									if (array1[i] === array[k]) {
+											flag = false;
+											break;
+									}
+							}
+							if (flag) {
+									array.push(array1[i]);
+							}
+					}
+			}
+	}
+	return array;
+}
+
+const arr4 = [2, 3, 3, 56, 77, 8, 55];
+const arr5 = [2, 55, 54, 7, 3, 22, 3, 2, 44, 56];
+
+console.log(`Mutual elements of arrays [2, 3, 3, 56, 77, 8, 55] and [2, 55, 54, 7, 3, 22, 3, 2, 44, 56] : ${findMutualElements(arr4, arr5)}`);
+console.log(`Mutual elements of arr1 and arr2: ${findMutualElements(arr1, arr2)}`);
